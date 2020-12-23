@@ -1,0 +1,11 @@
+﻿@model IQueryable<Education>
+@foreach (Education entity in Model)
+{
+<article>
+    <img src="~/img/@entity.ImagePath" alt="" class="image"/>
+    <div class="inner">
+        <h4>@entity.ContentEducation</h4>
+        @*<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>*@
+    </div>
+</article>
+}

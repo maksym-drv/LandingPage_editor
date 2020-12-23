@@ -1,0 +1,38 @@
+﻿@model IQueryable<Education>
+@{
+    string strTitle = "Настройка раздела образования";
+    string code = ViewBag.Word;
+    ViewBag.Title = strTitle;
+}
+
+@*<script src="~/js/ckeditor5-build-classic/ckeditor.js"></script>*@
+
+<div>
+    <h2>@strTitle</h2>
+    <div>
+        @if (Model.Any())
+        {
+            <div>
+                @foreach (Education entity in Model)
+                {
+                    <div>
+                        <a class="line" asp-area="Admin" asp-controller="Education" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
+                        |
+                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Education" asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@entity.Id" />
+                            <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
+                        </form>
+                        |
+                        <p class="line">
+                            @($"{entity.ContentEducation}")
+                        </p>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    <div>
+        <a asp-area="Admin" asp-controller="Education" asp-action="Edit" asp-route-id="">Добавить информацию</a>
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index">Вернуться</a>
+    </div>
+</div>

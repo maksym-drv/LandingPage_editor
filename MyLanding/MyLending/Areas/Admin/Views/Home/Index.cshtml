@@ -1,0 +1,23 @@
+﻿@{
+    string strTitle = "Панель администратора";
+    ViewBag.Title = strTitle;
+}
+<div>
+    <h2>@strTitle</h2>
+    <div class="div-box">
+        <h3>Редактировать страницы сайта</h3>
+        <a asp-area="Admin" asp-controller="Information" asp-action="Edit" asp-route-codeWord="PageAboutMe">One</a>
+        <a asp-area="Admin" asp-controller="Information" asp-action="Edit" asp-route-codeWord="PageSkills">Two</a>
+        <a asp-area="Admin" asp-controller="Information" asp-action="Edit" asp-route-codeWord="PageExperience">Three</a>
+        <a asp-area="Admin" asp-controller="Information" asp-action="Edit" asp-route-codeWord="PageEducation">Four</a>
+        <a asp-area="Admin" asp-controller="Skills" asp-action="Index">Skills</a>
+        <a asp-area="Admin" asp-controller="Experience" asp-action="Index">Experience</a>
+        <a asp-area="Admin" asp-controller="Education" asp-action="Index">Education</a>
+        <a asp-area="Admin" asp-controller="Meta" asp-action="Edit">Meta</a>
+    </div>
+    <div class="div-box">
+        <form asp-area="" asp-controller="Account" asp-action="LogOut" method="post">
+            <input type="submit" value="Выйти" />
+        </form>
+    </div>
+</div>

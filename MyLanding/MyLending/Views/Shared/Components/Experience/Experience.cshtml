@@ -1,0 +1,8 @@
+﻿@model IQueryable<Experience>
+
+<ul class="feature-icons">
+    @foreach (Experience entity in Model)
+    {
+        <li>@entity.ContentExperience</li>
+    }
+</ul>
